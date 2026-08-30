@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis Mauruto - Consultor SAP Business One & Entusiasta de Tecnologia</title>
+<meta name="description" content="Luis Mauruto - Lider Tecnico de Projetos SAP Business One, consultor e entusiasta de tecnologia com 19 anos de experiencia em ERP, liderança de projetos e automacao.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --bg-card: #10151f;
+    --bg-card-hover: #151b28;
+    --border: #212836;
+    --text: #e8ecf3;
+    --text-dim: #8b93a7;
+    --accent: #4c8bf5;
+    --accent-dim: #2c5aa0;
+    --gold: #d4a054;
+    --max-width: 1080px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, Segoe UI, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(76,139,245,0.10), transparent 40%),
+      radial-gradient(circle at 85% 0%, rgba(212,160,84,0.06), transparent 40%);
+  }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10,14,23,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .brand { font-weight: 700; font-size: 16px; letter-spacing: 0.3px; }
+  .brand span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav a { color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+  nav a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--accent); color: #ffffff !important; padding: 8px 16px; border-radius: 6px;
+    font-weight: 600 !important;
+  }
+  .nav-links { display: flex; }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  /* Hero */
+  header.hero { padding: 96px 0 80px; position: relative; }
+  .hero-flex { display: flex; align-items: center; gap: 56px; }
+  .hero-content { flex: 1; min-width: 0; }
+  .hero-photo { flex-shrink: 0; }
+  .hero-photo img {
+    width: 208px; height: 208px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 6px rgba(76,139,245,0.15), 0 20px 45px rgba(0,0,0,0.45);
+  }
+  @media (max-width: 800px) {
+    .hero-flex { flex-direction: column-reverse; text-align: center; }
+    .hero-meta { justify-content: center; }
+    .cta-row { justify-content: center; }
+    .hero-photo img { width: 160px; height: 160px; }
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--accent); font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  .eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+  h1 { font-size: clamp(32px, 5.5vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; max-width: 760px; }
+  h1 .accent { color: var(--accent); }
+  .subtitle { font-size: clamp(16px, 2vw, 19px); color: var(--text-dim); max-width: 620px; margin-top: 22px; }
+  .hero-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; font-size: 14px; color: var(--text-dim); }
+  .hero-meta span { display: flex; align-items: center; gap: 8px; }
+  .cta-row { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 24px; border-radius: 8px; font-weight: 600; font-size: 14.5px;
+    text-decoration: none; transition: transform .15s, box-shadow .15s; border: 1px solid transparent;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--accent); color: #ffffff; box-shadow: 0 6px 20px rgba(76,139,245,0.3); }
+  .btn-primary:hover { box-shadow: 0 10px 28px rgba(76,139,245,0.4); }
+  .btn-outline { border-color: var(--border); color: var(--text); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Sections */
+  section { padding: 72px 0; border-top: 1px solid var(--border); }
+  .section-tag { font-size: 13px; color: var(--gold); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .section-title { font-size: clamp(24px, 3.2vw, 34px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .section-lede { color: var(--text-dim); max-width: 680px; font-size: 16px; margin-bottom: 44px; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
+  @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text p { color: var(--text-dim); margin-bottom: 16px; font-size: 15.5px; }
+  .about-text strong { color: var(--text); font-weight: 600; }
+  .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; margin-bottom: 14px; }
+  .stat-card .num { font-size: 30px; font-weight: 800; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+  .stat-card .label { font-size: 13.5px; color: var(--text-dim); margin-top: 4px; }
+
+  /* Expertise */
+  .exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 800px) { .exp-grid { grid-template-columns: 1fr; } }
+  .exp-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 26px;
+    transition: border-color .2s, transform .2s;
+  }
+  .exp-card:hover { border-color: var(--accent-dim); transform: translateY(-3px); }
+  .exp-icon {
+    width: 42px; height: 42px; border-radius: 10px; background: rgba(76,139,245,0.14);
+    display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px;
+  }
+  .exp-card h3 { font-size: 16.5px; font-weight: 700; margin-bottom: 8px; }
+  .exp-card p { font-size: 14px; color: var(--text-dim); }
+
+  /* Skills */
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+  .skill-pill {
+    background: var(--bg-card); border: 1px solid var(--border); color: var(--text-dim);
+    padding: 8px 16px; border-radius: 100px; font-size: 13.5px; font-weight: 500;
+  }
+  .skill-pill.top { border-color: var(--accent-dim); color: var(--accent); background: rgba(76,139,245,0.1); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; padding-bottom: 40px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -32px; top: 4px; width: 13px; height: 13px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--accent);
+  }
+  .tl-item.current::before { background: var(--accent); box-shadow: 0 0 0 4px rgba(76,139,245,0.22); }
+  .tl-period { font-size: 12.5px; color: var(--gold); font-weight: 600; font-family: 'JetBrains Mono', monospace; margin-bottom: 6px; }
+  .tl-role { font-size: 17px; font-weight: 700; }
+  .tl-company { font-size: 14.5px; color: var(--accent); font-weight: 600; margin-top: 2px; margin-bottom: 8px; }
+  .tl-desc { font-size: 14.5px; color: var(--text-dim); max-width: 640px; }
+  .badge-current {
+    display: inline-block; font-size: 11px; font-weight: 700; color: #ffffff; background: var(--accent);
+    padding: 3px 9px; border-radius: 100px; margin-left: 10px; letter-spacing: 0.3px; vertical-align: middle;
+  }
+
+  /* Tech passion */
+  .passion-section { background: linear-gradient(180deg, rgba(212,160,84,0.05), transparent); }
+  .passion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  @media (max-width: 800px) { .passion-grid { grid-template-columns: 1fr; } }
+  .passion-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px;
+  }
+  .passion-card .tag { font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .passion-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .passion-card p { font-size: 14.5px; color: var(--text-dim); }
+  .stack-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .stack-chip {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); padding: 5px 10px; border-radius: 6px; color: var(--text-dim);
+  }
+
+  /* Contact / footer */
+  .contact-section { text-align: center; padding: 90px 0; }
+  .contact-section h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
+  .contact-section p { color: var(--text-dim); max-width: 480px; margin: 0 auto 36px; }
+  footer { border-top: 1px solid var(--border); padding: 28px 0; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer p { font-size: 13px; color: var(--text-dim); }
+  footer a { color: var(--text-dim); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Luis <span>Mauruto</span></div>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#trajetoria">Trajetória</a></li>
+      <li><a href="#tecnologia">Tecnologia</a></li>
+      <li><a href="https://www.linkedin.com/in/mauruto/" target="_blank" rel="noopener" class="nav-cta">LinkedIn</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-flex">
+    <div class="hero-content">
+      <div class="eyebrow">Disponível para novos projetos</div>
+      <h1>Consultor <span class="accent">SAP Business One</span> &amp; líder de projetos de ERP.</h1>
+      <p class="subtitle">19 anos transformando processos de negócio em sistemas que funcionam — da definição de escopo ao go-live. Fora do trabalho, sigo curioso: automação, self-hosting e tecnologia emergente são meu playground pessoal.</p>
+      <div class="hero-meta">
+        <span>📍 São Paulo, Brasil</span>
+        <span>💼 Líder Técnico de Projetos SAP B1 · okser</span>
+        <span>🎓 MBA em Gestão de TI · FIAP</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/mauruto/" target="_blank" rel="noopener">Ver perfil completo no LinkedIn →</a>
+        <a class="btn btn-outline" href="#trajetoria">Ver trajetória</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="profile.jpg" alt="Luis Mauruto">
+    </div>
+  </div>
+</header>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="section-tag">Sobre</div>
+    <h2 class="section-title">Da definição de processo ao go-live</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Comecei como estagiário de TI em 2007 e, ao longo de <strong>19 anos</strong>, migrei da administração de redes para a especialização em <strong>SAP Business One</strong> — hoje com <strong>16+ anos</strong> dedicados ao ecossistema SAP. Formado em <strong>Ciências da Computação</strong>, com <strong>MBA em Gestão de Tecnologia da Informação</strong> focado em tecnologias emergentes.</p>
+        <p>Passei por <strong>9 empresas</strong> e mais de uma dezena de projetos, liderando implantações de SAP Business One, Senior, GLPI, SharePoint, TMS, WMS, BI, portais de vendas e automação de processos — sempre com foco em aderência ao negócio, qualidade de entrega e mediação entre cliente, fornecedores e equipe técnica.</p>
+        <p>Tenho vasto conhecimento em <strong>PL/SQL</strong>, Crystal Reports, gestão de chamados e personalização/configuração de ERP SAP em SQL e HANA. Comunicativo, com bom relacionamento em equipe e foco em transformar complexidade técnica em resultado de negócio.</p>
+      </div>
+      <div>
+        <div class="stat-card"><div class="num">19+</div><div class="label">anos de carreira em TI e projetos</div></div>
+        <div class="stat-card"><div class="num">9</div><div class="label">empresas · implantações de ERP end-to-end</div></div>
+        <div class="stat-card"><div class="num">16+</div><div class="label">anos dedicados ao ecossistema SAP Business One</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="wrap">
+    <div class="section-tag">Expertise</div>
+    <h2 class="section-title">Onde eu entrego mais valor</h2>
+    <p class="section-lede">Da estratégia de implantação à linha de código do relatório — atuo em todas as etapas do ciclo de vida de um ERP.</p>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-icon">⚙️</div>
+        <h3>Implantação SAP Business One</h3>
+        <p>Parametrização, customização, integrações, migração SQL → HANA e acompanhamento de go-live ponta a ponta.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">📋</div>
+        <h3>Gestão de Projetos</h3>
+        <p>Escopo, prazo, custo e risco. Cronogramas, follow-ups, gestão de conflitos e metodologias ágeis (Scrum, Kanban) e PMI.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">👥</div>
+        <h3>Liderança de Equipe</h3>
+        <p>Coordenação de consultores e times de implantação, treinamento técnico e mediação entre cliente e fornecedores.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🗄️</div>
+        <h3>SQL &amp; Business Intelligence</h3>
+        <p>PL/SQL avançado, Crystal Reports, dashboards de BI e automação de relatórios e processos de dados.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🔗</div>
+        <h3>Integração de Sistemas</h3>
+        <p>Conexão entre ERP e sistemas satélites: TMS, WMS, GLPI, SharePoint, portais de vendas e força de vendas.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🚀</div>
+        <h3>Evolução &amp; Sustentação</h3>
+        <p>Manutenção contínua, gestão de chamados, evolução de backlog e melhoria de processos pós-implantação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">Competências</div>
+    <h2 class="section-title">Stack de trabalho</h2>
+    <div class="skills-wrap">
+      <span class="skill-pill top">SAP Business One</span>
+      <span class="skill-pill top">SQL / PL-SQL / HANA</span>
+      <span class="skill-pill top">Trabalho em equipe</span>
+      <span class="skill-pill top">Metodologias Ágeis</span>
+      <span class="skill-pill top">Liderança de equipe</span>
+      <span class="skill-pill top">Gestão de riscos</span>
+      <span class="skill-pill">Crystal Reports</span>
+      <span class="skill-pill">Gestão de Projetos PMI</span>
+      <span class="skill-pill">GLPI</span>
+      <span class="skill-pill">SharePoint</span>
+      <span class="skill-pill">TMS / WMS</span>
+      <span class="skill-pill">Business Intelligence</span>
+      <span class="skill-pill">Mediação de conflitos</span>
+      <span class="skill-pill">Documentação técnica</span>
+      <span class="skill-pill">Treinamento (Train the Trainer)</span>
+    </div>
+  </div>
+</section>
+
+<section id="trajetoria">
+  <div class="wrap">
+    <div class="section-tag">Trajetória</div>
+    <h2 class="section-title">Experiência profissional</h2>
+    <div class="timeline">
+      <div class="tl-item current">
+        <div class="tl-period">FEV 2026 — ATUAL</div>
+        <div class="tl-role">Líder Técnico de Projetos SAP Business One<span class="badge-current">atual</span></div>
+        <div class="tl-company">okser</div>
+        <div class="tl-desc">São Paulo, Brasil · Híbrido</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">FEV 2025 — FEV 2026</div>
+        <div class="tl-role">Especialista de Implantação / Consultor Sênior SAP Business One</div>
+        <div class="tl-company">AIDDA Group</div>
+        <div class="tl-desc">Remoto · Documentação técnica e implantação.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">NOV 2022 — FEV 2026</div>
+        <div class="tl-role">Especialista de Implantação / Consultor Sênior SAP Business One</div>
+        <div class="tl-company">Alvarez &amp; Marsal</div>
+        <div class="tl-desc">Implantação de ERP para clientes (BeFly / HStern): definição de escopo, prazo, risco e custo; gestão de cronograma e conflitos; parametrização, treinamentos e acompanhamento de go-live.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">ABR 2022 — OUT 2022</div>
+        <div class="tl-role">Coordenador de Implantação / Consultor Sênior SAP Business One</div>
+        <div class="tl-company">DuoConect</div>
+        <div class="tl-desc">Orientação de equipe de implantação, cronogramas, migração SQL → HANA e definição de processos ágeis + PMI.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">MAI 2019 — MAR 2022</div>
+        <div class="tl-role">Coordenador de TI - Sistemas</div>
+        <div class="tl-company">Rojemac</div>
+        <div class="tl-desc">Gestão da equipe de suporte e evolução de sistemas; implantação de ERP Sapiens Senior, portal CSC (GLPI), SharePoint e dashboards de BI.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">SET 2014 — MAI 2019</div>
+        <div class="tl-role">Consultor de Sistemas ERP (SAP Business One / Senior)</div>
+        <div class="tl-company">Rojemac</div>
+        <div class="tl-desc">Implantação de módulos, add-ons, WMS, força de vendas (PEPPERI) e migração do SAP para nuvem AWS.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">SET 2013 — AGO 2014</div>
+        <div class="tl-role">Consultor SAP Business One</div>
+        <div class="tl-company">okser</div>
+        <div class="tl-desc">Relatórios em Crystal Report/SQL avançado, bloqueios via Transaction Notification, cargas via DTW e implantação de Add-Ons (Solution One, Triple One, BankSync, B1Up).</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">MAR 2012 — SET 2013</div>
+        <div class="tl-role">Consultor SAP Business One</div>
+        <div class="tl-company">Superabiz Soluções</div>
+        <div class="tl-desc">Relatórios em Crystal Report, bloqueios via Transaction Notification, levantamento de requisitos, treinamentos e documentação.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">MAI 2011 — FEV 2012</div>
+        <div class="tl-role">Consultor SAP Business One</div>
+        <div class="tl-company">IT2B - Tecnologia</div>
+        <div class="tl-desc">Criação de relatórios em Crystal Report, bloqueios via Transaction Notification, implantação, homologação e go-live do SAP B1.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">ABR 2010 — MAI 2011</div>
+        <div class="tl-role">Consultor SAP Business One</div>
+        <div class="tl-company">Megawork</div>
+        <div class="tl-desc">Suporte a usuários, configuração e personalização do sistema, relatórios em Crystal Report e implantação de Add-Ons.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">OUT 2008 — MAR 2010</div>
+        <div class="tl-role">Analista de Sistemas</div>
+        <div class="tl-company">LAPP Group do Brasil</div>
+        <div class="tl-desc">Desenvolvimento de relatórios SQL, personalização do SAP Business One, gerenciamento de usuários e licenças, administração geral do SAP e da rede.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">JUL 2007 — OUT 2008</div>
+        <div class="tl-role">Estagiário de TI</div>
+        <div class="tl-company">LAPP Group do Brasil</div>
+        <div class="tl-desc">Administração de rede e primeiros passos como líder de projeto na implantação do SAP Business One.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tecnologia" class="passion-section">
+  <div class="wrap">
+    <div class="section-tag">Além do trabalho</div>
+    <h2 class="section-title">Entusiasta de tecnologia, na prática</h2>
+    <p class="section-lede">Gosto de entender como as coisas funcionam por dentro — e de colocar a mão na massa fora do horário comercial também.</p>
+    <div class="passion-grid">
+      <div class="passion-card">
+        <div class="tag">Homelab &amp; Self-Hosting</div>
+        <h3>Minha própria infraestrutura, do zero</h3>
+        <p>Monto e mantenho meu próprio servidor doméstico: containers Docker, proxy reverso com certificados automáticos, DNS local, VPN para acesso remoto seguro e túneis para expor serviços ao mundo — tudo com atenção a segurança (hardening, CSRF, hashing de senha, cabeçalhos HTTP) de ponta a ponta.</p>
+        <div class="stack-row">
+          <span class="stack-chip">Docker</span>
+          <span class="stack-chip">Node.js</span>
+          <span class="stack-chip">PostgreSQL</span>
+          <span class="stack-chip">Caddy</span>
+          <span class="stack-chip">Cloudflare Tunnel</span>
+          <span class="stack-chip">Home Assistant</span>
+        </div>
+      </div>
+      <div class="passion-card">
+        <div class="tag">Origem acadêmica em games</div>
+        <h3>IRTaktiks — jogo de estratégia multitoque</h3>
+        <p>Meu trabalho de conclusão de curso em Ciências da Computação foi um jogo de RPG tático em tempo real para mesas multitoque, desenvolvido em Microsoft XNA com reconhecimento de toque via Touchlib — aceito no SBGames 2008, o maior simpósio brasileiro de jogos digitais.</p>
+        <div class="stack-row">
+          <span class="stack-chip">C# / XNA</span>
+          <span class="stack-chip">Touchlib</span>
+          <span class="stack-chip">SBGames 2008</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contato">
+  <div class="wrap">
+    <h2>Vamos conversar?</h2>
+    <p>Aberto a novos projetos de implantação de ERP, consultoria SAP Business One ou uma boa conversa sobre tecnologia.</p>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/mauruto/" target="_blank" rel="noopener">Conectar no LinkedIn →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Luis Mauruto — Consultor SAP Business One</p>
+    <p><a href="https://www.linkedin.com/in/mauruto/" target="_blank" rel="noopener">linkedin.com/in/mauruto</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
